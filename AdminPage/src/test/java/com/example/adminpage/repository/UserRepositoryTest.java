@@ -1,6 +1,7 @@
 package com.example.adminpage.repository;
 
 import com.example.adminpage.AdminPageApplicationTests;
+import com.example.adminpage.moel.entity.Item;
 import com.example.adminpage.moel.entity.User;
 import org.junit.Assert;
 import org.junit.Test;
@@ -30,12 +31,17 @@ public class UserRepositoryTest extends AdminPageApplicationTests {
         System.out.println(newUser);
     }
     @Test
+    @Transactional//테스트 때만 통신관련 문제
     public void read(){
-        Optional<User> user=userRepository.findById(2L);
+
+        //select * from user where id = ? 라는 뜻
+        Optional<User> user=userRepository.findByAccount("TestUser02");
 
         user.ifPresent (selectUser ->{
-            System.out.println("user: "+selectUser);
-            System.out.println("email: "+selectUser.getEmail());
+            selectUser.getOrderDetailList().stream().forEach(detail->{ //stream forEach는 List  형태라서
+                Item item=detail.getItem();
+                System.out.println(item);
+            });
         });
 
     }

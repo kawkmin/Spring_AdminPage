@@ -30,8 +30,6 @@ public class ItemRepositoryTest extends AdminPageApplicationTests {
 
         Assert.assertTrue(item.isPresent());
 
-        item.ifPresent(i->{
-            System.out.println(i);
-        });
+
     }
 }

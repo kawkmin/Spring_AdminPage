@@ -18,8 +18,8 @@ public class OrederDetailRepositoryTest extends AdminPageApplicationTests {
 
         orderDetail.setOrderAt(LocalDateTime.now());
 
-        orderDetail.setUserId(9L);
-        orderDetail.setItemId(1L);
+        /*orderDetail.setUserId(9L);*/
+        /*orderDetail.setItemId(1L);*/
         OrderDetail newOrderDetail=orederDetailREpository.save(orderDetail);
         Assert.assertNotNull(newOrderDetail);
     }
