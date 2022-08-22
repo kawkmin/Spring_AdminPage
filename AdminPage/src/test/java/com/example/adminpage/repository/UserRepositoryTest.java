@@ -1,7 +1,6 @@
 package com.example.adminpage.repository;
 
 import com.example.adminpage.AdminPageApplicationTests;
-import com.example.adminpage.moel.entity.Item;
 import com.example.adminpage.moel.entity.User;
 import org.junit.Assert;
 import org.junit.Test;
@@ -18,31 +17,35 @@ public class UserRepositoryTest extends AdminPageApplicationTests {
 
     @Test
     public void create(){
-        //string sql = insert into user(%s,%s,%d)value(account,email,age)
-        User user=new User();
-        /*user.setId(); AI라서 x */
-        user.setAccount("TestUser02"); //NN
-        user.setEmail("TestUser@gmail.com");
-        user.setPhoneNumber("010-1111-1111");
-        user.setCreatedAt(LocalDateTime.now());
-        user.setCreatedBy("TestUser2");
+        String account="Test01";
+        String password="Test01";
+        String status="REGISTERED";
+        String email="Test01@gmail.com";
+        String phoneNumber="010-1111-2222";
+        LocalDateTime registeredAt=LocalDateTime.now();
+        LocalDateTime createdAt=LocalDateTime.now();
+        String createdBy="AdminServer";
 
-        User newUser=userRepository.save(user);
-        System.out.println(newUser);
+        User user=new User();
+        user.setAccount(account);
+        user.setPassword(password);
+        user.setStatus(status);
+        user.setEmail(email);
+        user.setPhoneNumber(phoneNumber);
+        user.setRegisteredAt(registeredAt);
+        user.setCreatedAt(createdAt);
+        user.setCreatedBy(createdBy);
+
+        User newuser=userRepository.save(user);
+        Assert.assertNotNull(newuser);
+
     }
     @Test
     @Transactional//테스트 때만 통신관련 문제
     public void read(){
+        User user=userRepository.findFirstByPhoneNumberOrderByIdDesc("010-1111-2222");
+        Assert.assertNotNull(user);
 
-        //select * from user where id = ? 라는 뜻
-        Optional<User> user=userRepository.findByAccount("TestUser02");
-
-        user.ifPresent (selectUser ->{
-            selectUser.getOrderDetailList().stream().forEach(detail->{ //stream forEach는 List  형태라서
-                Item item=detail.getItem();
-                System.out.println(item);
-            });
-        });
 
     }
     @Test

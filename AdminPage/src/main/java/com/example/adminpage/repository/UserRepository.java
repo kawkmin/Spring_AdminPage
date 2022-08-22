@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository//쿼리문 사용 가능하게 만듬(DELETE 등) / DB의 값을 조정하는 계층
 public interface UserRepository extends JpaRepository<User,Long> {//<대상 Entity, 그 Entity의 PK타입>
 
-
+    User findFirstByPhoneNumberOrderByIdDesc(String phoneNumber);
 
    /* //select * from user where account=? << test03,test04
     Optional<User> findByAccount(String account); //쿼리 메소드

@@ -24,12 +24,12 @@ public class AdminUser {
     private String status;
     private String role;
     private LocalDateTime lastLoginAt;
-    private LocalDateTime passwordUpdateAt;
+    private LocalDateTime passwordUpdatedAt;
     private int loginFailCount;
     private LocalDateTime registeredAt;
     private LocalDateTime unregisteredAt;
-    private LocalDateTime createAt;
-    private String createBy;
+    private LocalDateTime createdAt;
+    private String createdBy;
     private LocalDateTime updatedAt;
-    private String updateBy;
+    private String updatedBy;
 }
