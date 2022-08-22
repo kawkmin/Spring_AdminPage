@@ -6,8 +6,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.time.LocalDateTime;
-
 public class AdminUserRepositoryTest extends AdminPageApplicationTests {
     @Autowired
     private AdminUserRepository adminUserRepository;
@@ -19,11 +17,13 @@ public class AdminUserRepositoryTest extends AdminPageApplicationTests {
         adminUser.setPassword("adminUser01");
         adminUser.setStatus("REGISTERED");
         adminUser.setRole("PARTNER");
-        adminUser.setCreatedAt(LocalDateTime.now());
-        adminUser.setCreatedBy("AdminServer");
+/*        adminUser.setCreatedAt(LocalDateTime.now());
+        adminUser.setCreatedBy("AdminServer");*/
 
         AdminUser newadminuser=adminUserRepository.save(adminUser);
         Assert.assertNotNull(newadminuser);
 
+        newadminuser.setAccount("CHANGE");
+        adminUserRepository.save(newadminuser);
     }
 }

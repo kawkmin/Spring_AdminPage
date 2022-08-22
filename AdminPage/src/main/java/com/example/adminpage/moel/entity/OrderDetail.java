@@ -5,6 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -16,6 +21,7 @@ import java.time.LocalDateTime;
 @Entity//snakecase(단어 사이의 공백을 밑줄로)를 써서 order_detail로 연결
 /*@ToString(exclude = {"user","item"})//상호 참조 제외 예를 들어 user을 쓸 때, orderDetail의 user인지 user의 user인지 모름 방지*/
 @ToString(exclude = {"orderGroup", "item"})
+@EntityListeners(AuditingEntityListener.class)
 public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,11 +30,14 @@ public class OrderDetail {
     private LocalDateTime arrivalDate;
     private Integer quantity;
     private BigDecimal totalPrice;
+    @CreatedDate
     private LocalDateTime createdAt;
+    @CreatedBy
     private String createdBy;
+    @LastModifiedDate
     private LocalDateTime updatedAt;
+    @LastModifiedBy
     private String updatedBy;
-
     @ManyToOne
     private Item item;
 

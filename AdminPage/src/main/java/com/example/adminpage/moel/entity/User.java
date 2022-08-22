@@ -4,6 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -15,6 +20,7 @@ import java.util.List;
 @Entity//JPA가 관리하도록 class 이름을 기반으로 SQL에 연결
 /*@Table(name="user") //User도 user로 취급 가능*/
 @ToString(exclude = {"orderGroupList"})
+@EntityListeners(AuditingEntityListener.class)
 public class User {
     /*@Column(name="id")// 이름에 _가 빠져도 배정 가능*/
     @Id//기본키(PK) 할당 가능하게 만듬 / Pk 라는 표시
@@ -35,13 +41,14 @@ public class User {
 
     private LocalDateTime unregisteredAt;
 
+    @CreatedDate
     private LocalDateTime createdAt;
-
+    @CreatedBy
     private String createdBy;
-
+    @LastModifiedDate
     private LocalDateTime updatedAt;
-
-    private String updatedBy;
+    @LastModifiedBy
+    private String updatedBy;;
 
     //User 1 : N OrderGroup
 
