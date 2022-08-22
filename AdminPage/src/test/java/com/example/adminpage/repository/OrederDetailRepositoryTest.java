@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 public class OrederDetailRepositoryTest extends AdminPageApplicationTests {
     @Autowired
-    private OrederDetailREpository orederDetailREpository;
+    private OrederDetailRepository orederDetailREpository;
 
     @Test
     public void create(){

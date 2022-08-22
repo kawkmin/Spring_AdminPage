@@ -14,31 +14,22 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Item {
+public class Partner {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String status;
     private String name;
-    private String title;
-    private String content;
-    private Integer price;
-    private String brandName;
+    private String status;
+    private String address;
+    private String callCenter;
+    private String partnerNumber;
+    private String businessNumber;
+    private String ceoName;
     private LocalDateTime registeredAt;
     private LocalDateTime unregisteredAt;
     private LocalDateTime createAt;
     private String createBy;
     private LocalDateTime updatedAt;
     private String updateBy;
-
-
-
-    //LAZY = 지연로딩 , EAGER = 즉시로딩
-
-    //Lazy = Select * FROM item where id = ?
-
-    //EAGER = 연관관계 모두 join 일어남 -> 성능 저하, 1:1 땐 ㄱㅊ
-    /*@OneToMany(fetch = FetchType.LAZY,mappedBy = "item")
-    private List<OrderDetail> orderDetailList;*/
 }
