@@ -1,10 +1,8 @@
 package com.example.adminpage.moel.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -22,6 +20,8 @@ import java.time.LocalDateTime;
 /*@ToString(exclude = {"user","item"})//상호 참조 제외 예를 들어 user을 쓸 때, orderDetail의 user인지 user의 user인지 모름 방지*/
 @ToString(exclude = {"orderGroup", "item"})
 @EntityListeners(AuditingEntityListener.class)
+@Builder
+@Accessors(chain = true)
 public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

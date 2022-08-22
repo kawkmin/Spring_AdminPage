@@ -1,9 +1,7 @@
 package com.example.adminpage.moel.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -21,6 +19,8 @@ import java.util.List;
 /*@Table(name="user") //User도 user로 취급 가능*/
 @ToString(exclude = {"orderGroupList"})
 @EntityListeners(AuditingEntityListener.class)
+@Builder //생성자 편하게 . . .
+@Accessors(chain = true) //set 등을 할 때 계속해서 . . .로 호출 가능
 public class User {
     /*@Column(name="id")// 이름에 _가 빠져도 배정 가능*/
     @Id//기본키(PK) 할당 가능하게 만듬 / Pk 라는 표시
