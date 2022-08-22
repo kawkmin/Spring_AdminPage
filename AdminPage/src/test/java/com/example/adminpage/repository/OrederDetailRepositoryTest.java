@@ -22,8 +22,8 @@ public class OrederDetailRepositoryTest extends AdminPageApplicationTests {
         orderDetail.setQuantity(1);
         orderDetail.setTotalPrice(BigDecimal.valueOf(900000));
         orderDetail.setCreatedAt(LocalDateTime.now());
-        orderDetail.setOrderGroupId(1L);
-        orderDetail.setItemId(1L);
+     /*   orderDetail.setOrderGroupId(1L); //Long -> orderGroup*/
+        //orderDetail.setItemId(1L);
         orderDetail.setCreatedBy("AdminServer");
 
         OrderDetail newOrderDetail = orederDetailREpository.save(orderDetail);
