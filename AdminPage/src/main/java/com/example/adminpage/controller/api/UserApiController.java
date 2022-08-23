@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@Slf4j
+@Slf4j //log사용 가능하게 만듬
 @RestController
 @RequestMapping("/api/user")
 public class UserApiController implements CrudInterface<UserApiRequest, UserApiResponse> {
@@ -27,18 +27,20 @@ public class UserApiController implements CrudInterface<UserApiRequest, UserApiR
     @Override
     @GetMapping("{id}")//api//user//{id}
     public Header<UserApiResponse> read(@PathVariable(name="id") Long id) {
-        return null;
+        log.info("read : {}",id);
+        return userApiLogicService.read(id);
     }
 
     @Override
     @PutMapping("")
     public Header<UserApiResponse> update(@RequestBody Header<UserApiRequest> request) {
-        return null;
+        return userApiLogicService.update(request);
     }
 
     @Override
     @DeleteMapping("{id}")
     public Header delete(@PathVariable(name="id") Long id) {
-        return null;
+        log.info("delete: {} ",id);
+        return userApiLogicService.delete(id);
     }
 }

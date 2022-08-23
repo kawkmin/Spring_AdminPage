@@ -10,9 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
+//API User CRUD 구현
 @Service
-public class UserApiLogicService implements CrudInterface<UserApiRequest,UserApiResponse> {
+public class UserApiLogicService implements CrudInterface<UserApiRequest, UserApiResponse> {
 
     @Autowired
     private UserRepository userRepository;
@@ -20,8 +22,8 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest,UserApi
 
     @Override
     public Header<UserApiResponse> create(Header<UserApiRequest> request) {
-        UserApiRequest userApiRequest=request.getData();
-        User user=User.builder()
+        UserApiRequest userApiRequest = request.getData();
+        User user = User.builder()
                 .account(userApiRequest.getAccount())
                 .password(userApiRequest.getPassword())
                 .status("REGISTERED")
@@ -29,29 +31,63 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest,UserApi
                 .email(userApiRequest.getEmail())
                 .registeredAt(LocalDateTime.now())
                 .build();
-        User newUser=userRepository.save(user);
+        User newUser = userRepository.save(user);
 
         return response(newUser);
     }
 
     @Override
     public Header<UserApiResponse> read(Long id) {
-        return null;
+        Optional<User> optional = userRepository.findById(id);
+
+        return optional
+                .map(user -> response(user)
+                )
+                .orElseGet(
+                        () -> Header.ERROR("데이터 없음")
+                );
     }
+
 
     @Override
     public Header<UserApiResponse> update(Header<UserApiRequest> request) {
-        return null;
+        //1. data
+        UserApiRequest userApiRequest = request.getData();
+        //2. id->user 데이터 찾기
+        Optional<User> optional = userRepository.findById(userApiRequest.getId());
+        return optional.map(user -> {
+                    //3. update
+                    user.setAccount(userApiRequest.getAccount())
+                            .setPassword(userApiRequest.getPassword())
+                            .setStatus(userApiRequest.getStatus())
+                            .setPhoneNumber(userApiRequest.getPhoneNumber())
+                            .setEmail(userApiRequest.getEmail())
+                            .setRegisteredAt(userApiRequest.getRegisteredAt())
+                            .setUnregisteredAt(userApiRequest.getUnregisteredAt());
+                    return user;
+                })
+                .map(user -> userRepository.save(user)) //update->newUser
+                .map(updateUser -> response(updateUser))//
+                .orElseGet(
+                        () -> Header.ERROR("데이터 없음")
+                );
+
     }
 
     @Override
     public Header delete(Long id) {
-        return null;
+        Optional<User> optional = userRepository.findById(id);
+        return optional.map(user -> {
+                    userRepository.delete(user);
+                    return Header.OK();
+                })
+                .orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
-    private Header<UserApiResponse> response(User user){
+
+    private Header<UserApiResponse> response(User user) {
         //user->userApiResponse
-        UserApiResponse userApiResponse=UserApiResponse.builder()
+        UserApiResponse userApiResponse = UserApiResponse.builder()
                 .id(user.getId())
                 .account(user.getAccount())
                 .password(user.getPassword())
