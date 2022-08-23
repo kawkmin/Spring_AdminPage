@@ -1,6 +1,7 @@
 package com.example.adminpage.controller;
 
 import com.example.adminpage.moel.SearchParam;
+import com.example.adminpage.moel.network.Header;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,8 +22,8 @@ public class GetController {
         return id+pwd;
     }
 
-    //localhost:8080/api/multiParameter?account=abcd&email=study@gmail.com&page=10
-    @GetMapping("getMultiParameter")
+    //localhost:8080/api/getmultiParameter?account=abcd&email=study@gmail.com&page=10
+    @GetMapping("/getMultiParameter")
     public SearchParam getMultiParameter(SearchParam searchParam){ //타입을 객체로 메소드 선언시 JSON 형식 자동 바꿈
         System.out.println(searchParam.getAccount());
         System.out.println(searchParam.getEmail());
@@ -32,4 +33,10 @@ public class GetController {
         return searchParam;
     }
 
+    @GetMapping("/header")
+    public Header getHeader(){
+
+        //{"resultCode: OK ","description : OK"}
+        return Header.builder().resultCode("OK").description("OK").build();
+    }
 }
