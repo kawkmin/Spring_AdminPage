@@ -2,10 +2,10 @@ package com.example.adminpage.ifs;
 
 import com.example.adminpage.moel.network.Header;
 
-public interface CrudInterface {
+public interface CrudInterface<Req,Res> {
 
-    Header create();
-    Header read(Long id);
-    Header update();
+    Header<Res> create(Header<Req> request);
+    Header<Res> read(Long id);
+    Header<Res> update(Header<Req> request);
     Header delete(Long id);
 }
