@@ -1,5 +1,6 @@
 package com.example.adminpage.moel.network.response;
 
+import com.example.adminpage.moel.enumclass.ItemStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +16,7 @@ import java.time.LocalDateTime;
 
 public class ItemApiResponse {
     private  Long id;
-    private String status;
+    private ItemStatus status;
     private String name;
     private String title;
     private String content;

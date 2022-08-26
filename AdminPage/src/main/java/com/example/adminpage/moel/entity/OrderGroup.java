@@ -1,5 +1,6 @@
 package com.example.adminpage.moel.entity;
 
+import com.example.adminpage.moel.enumclass.OrderType;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
@@ -26,7 +27,9 @@ public class OrderGroup {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String status;
-    private String orderType;
+
+    @Enumerated(EnumType.STRING)
+    private OrderType orderType;
     private String revAddress;
     private String revName;
     private String paymentType;
