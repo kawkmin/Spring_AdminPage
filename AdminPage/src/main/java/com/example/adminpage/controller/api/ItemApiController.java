@@ -1,6 +1,7 @@
 package com.example.adminpage.controller.api;
 
 import com.example.adminpage.controller.CrudController;
+import com.example.adminpage.moel.entity.Item;
 import com.example.adminpage.moel.network.request.ItemApiRequest;
 import com.example.adminpage.moel.network.response.ItemApiResponse;
 import com.example.adminpage.service.ItemApiLogicService;
@@ -12,7 +13,7 @@ import javax.annotation.PostConstruct;
 
 @RestController
 @RequestMapping("/api/item")
-public class ItemApiController extends CrudController<ItemApiRequest, ItemApiResponse> {
+public class ItemApiController extends CrudController<ItemApiRequest, ItemApiResponse, Item> {
 
     @Autowired
     private ItemApiLogicService itemApiLogicService;
