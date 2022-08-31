@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class OrederDetailRepositoryTest extends AdminPageApplicationTests {
+public class OrderDetailRepositoryTest extends AdminPageApplicationTests {
     @Autowired
-    private OrederDetailRepository orederDetailREpository;
+    private OrderDetailRepository orderDetailREpository;
 
     @Test
     public void create() {
@@ -26,7 +26,7 @@ public class OrederDetailRepositoryTest extends AdminPageApplicationTests {
         //orderDetail.setItemId(1L);
         orderDetail.setCreatedBy("AdminServer");
 
-        OrderDetail newOrderDetail = orederDetailREpository.save(orderDetail);
+        OrderDetail newOrderDetail = orderDetailREpository.save(orderDetail);
         Assert.assertNotNull(newOrderDetail);
     }
 }

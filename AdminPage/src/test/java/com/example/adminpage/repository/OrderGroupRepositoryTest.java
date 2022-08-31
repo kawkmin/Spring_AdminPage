@@ -18,7 +18,6 @@ public class OrderGroupRepositoryTest extends AdminPageApplicationTests {
     public void create(){
         OrderGroup orderGroup=new OrderGroup();
         orderGroup.setStatus("COMPLETE");
-        orderGroup.setOrderType("ALL");
         orderGroup.setRevAddress("서울시 강남구");
         orderGroup.setPaymentType("Card");
         orderGroup.setTotalPrice(BigDecimal.valueOf(900000));
