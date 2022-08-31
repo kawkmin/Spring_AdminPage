@@ -2,8 +2,8 @@ package com.example.adminpage.sample;
 
 
 import com.example.adminpage.AdminPageApplicationTests;
-import com.example.adminpage.moel.entity.Category;
-import com.example.adminpage.moel.entity.Partner;
+import com.example.adminpage.model.entity.Category;
+import com.example.adminpage.model.entity.Partner;
 import com.example.adminpage.repository.CategoryRepository;
 import com.example.adminpage.repository.PartnerRepository;
 import lombok.extern.slf4j.Slf4j;

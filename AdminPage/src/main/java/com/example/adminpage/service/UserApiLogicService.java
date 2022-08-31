@@ -1,16 +1,16 @@
 package com.example.adminpage.service;
 
 import com.example.adminpage.ifs.CrudInterface;
-import com.example.adminpage.moel.entity.OrderGroup;
-import com.example.adminpage.moel.entity.User;
-import com.example.adminpage.moel.enumclass.UserStatus;
-import com.example.adminpage.moel.network.Header;
-import com.example.adminpage.moel.network.Pagination;
-import com.example.adminpage.moel.network.request.UserApiRequest;
-import com.example.adminpage.moel.network.response.ItemApiResponse;
-import com.example.adminpage.moel.network.response.OrderGroupApiResponse;
-import com.example.adminpage.moel.network.response.UserApiResponse;
-import com.example.adminpage.moel.network.response.UserOrderInfoApiResponse;
+import com.example.adminpage.model.entity.OrderGroup;
+import com.example.adminpage.model.entity.User;
+import com.example.adminpage.model.enumclass.UserStatus;
+import com.example.adminpage.model.network.Header;
+import com.example.adminpage.model.network.Pagination;
+import com.example.adminpage.model.network.request.UserApiRequest;
+import com.example.adminpage.model.network.response.ItemApiResponse;
+import com.example.adminpage.model.network.response.OrderGroupApiResponse;
+import com.example.adminpage.model.network.response.UserApiResponse;
+import com.example.adminpage.model.network.response.UserOrderInfoApiResponse;
 import com.example.adminpage.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

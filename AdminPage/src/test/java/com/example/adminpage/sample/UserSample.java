@@ -1,8 +1,8 @@
 package com.example.adminpage.sample;
 
 import com.example.adminpage.AdminPageApplicationTests;
-import com.example.adminpage.moel.entity.User;
-import com.example.adminpage.moel.enumclass.UserStatus;
+import com.example.adminpage.model.entity.User;
+import com.example.adminpage.model.enumclass.UserStatus;
 import com.example.adminpage.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

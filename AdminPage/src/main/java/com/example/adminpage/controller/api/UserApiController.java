@@ -1,10 +1,10 @@
 package com.example.adminpage.controller.api;
 
 import com.example.adminpage.ifs.CrudInterface;
-import com.example.adminpage.moel.network.Header;
-import com.example.adminpage.moel.network.request.UserApiRequest;
-import com.example.adminpage.moel.network.response.UserApiResponse;
-import com.example.adminpage.moel.network.response.UserOrderInfoApiResponse;
+import com.example.adminpage.model.network.Header;
+import com.example.adminpage.model.network.request.UserApiRequest;
+import com.example.adminpage.model.network.response.UserApiResponse;
+import com.example.adminpage.model.network.response.UserOrderInfoApiResponse;
 import com.example.adminpage.service.UserApiLogicService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

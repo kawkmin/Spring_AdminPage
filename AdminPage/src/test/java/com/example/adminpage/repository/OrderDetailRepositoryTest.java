@@ -1,7 +1,7 @@
 package com.example.adminpage.repository;
 
 import com.example.adminpage.AdminPageApplicationTests;
-import com.example.adminpage.moel.entity.OrderDetail;
+import com.example.adminpage.model.entity.OrderDetail;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

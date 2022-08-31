@@ -1,8 +1,8 @@
 package com.example.adminpage.repository;
 
 import com.example.adminpage.AdminPageApplicationTests;
-import com.example.adminpage.moel.entity.Item;
-import com.example.adminpage.moel.enumclass.ItemStatus;
+import com.example.adminpage.model.entity.Item;
+import com.example.adminpage.model.enumclass.ItemStatus;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

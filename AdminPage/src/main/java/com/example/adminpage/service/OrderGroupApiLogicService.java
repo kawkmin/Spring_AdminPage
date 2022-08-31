@@ -1,9 +1,9 @@
 package com.example.adminpage.service;
 
-import com.example.adminpage.moel.entity.OrderGroup;
-import com.example.adminpage.moel.network.Header;
-import com.example.adminpage.moel.network.request.OrderGroupApiRequest;
-import com.example.adminpage.moel.network.response.OrderGroupApiResponse;
+import com.example.adminpage.model.entity.OrderGroup;
+import com.example.adminpage.model.network.Header;
+import com.example.adminpage.model.network.request.OrderGroupApiRequest;
+import com.example.adminpage.model.network.response.OrderGroupApiResponse;
 import com.example.adminpage.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

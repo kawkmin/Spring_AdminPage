@@ -1,7 +1,7 @@
 package com.example.adminpage.controller;
 
 import com.example.adminpage.ifs.CrudInterface;
-import com.example.adminpage.moel.network.Header;
+import com.example.adminpage.model.network.Header;
 import com.example.adminpage.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

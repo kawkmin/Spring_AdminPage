@@ -1,8 +1,8 @@
 package com.example.adminpage.repository;
 
 import com.example.adminpage.AdminPageApplicationTests;
-import com.example.adminpage.moel.entity.User;
-import com.example.adminpage.moel.enumclass.UserStatus;
+import com.example.adminpage.model.entity.User;
+import com.example.adminpage.model.enumclass.UserStatus;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

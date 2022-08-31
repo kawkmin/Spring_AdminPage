@@ -1,9 +1,9 @@
 package com.example.adminpage.service;
 
-import com.example.adminpage.moel.entity.Item;
-import com.example.adminpage.moel.network.Header;
-import com.example.adminpage.moel.network.request.ItemApiRequest;
-import com.example.adminpage.moel.network.response.ItemApiResponse;
+import com.example.adminpage.model.entity.Item;
+import com.example.adminpage.model.network.Header;
+import com.example.adminpage.model.network.request.ItemApiRequest;
+import com.example.adminpage.model.network.response.ItemApiResponse;
 import com.example.adminpage.repository.PartnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

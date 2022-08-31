@@ -1,7 +1,7 @@
 package com.example.adminpage.repository;
 
 import com.example.adminpage.AdminPageApplicationTests;
-import com.example.adminpage.moel.entity.Category;
+import com.example.adminpage.model.entity.Category;
 
 import org.junit.Assert;
 import org.junit.Test;

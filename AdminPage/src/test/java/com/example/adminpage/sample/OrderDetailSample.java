@@ -2,11 +2,11 @@ package com.example.adminpage.sample;
 
 
 import com.example.adminpage.AdminPageApplicationTests;
-import com.example.adminpage.moel.entity.Item;
-import com.example.adminpage.moel.entity.OrderDetail;
-import com.example.adminpage.moel.entity.OrderGroup;
-import com.example.adminpage.moel.entity.User;
-import com.example.adminpage.moel.enumclass.OrderType;
+import com.example.adminpage.model.entity.Item;
+import com.example.adminpage.model.entity.OrderDetail;
+import com.example.adminpage.model.entity.OrderGroup;
+import com.example.adminpage.model.entity.User;
+import com.example.adminpage.model.enumclass.OrderType;
 import com.example.adminpage.repository.ItemRepository;
 import com.example.adminpage.repository.OrderDetailRepository;
 import com.example.adminpage.repository.OrderGroupRepository;

@@ -1,7 +1,7 @@
 package com.example.adminpage.controller;
 
-import com.example.adminpage.moel.SearchParam;
-import com.example.adminpage.moel.network.Header;
+import com.example.adminpage.model.SearchParam;
+import com.example.adminpage.model.network.Header;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

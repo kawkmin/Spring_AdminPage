@@ -1,9 +1,9 @@
 package com.example.adminpage.service;
 
-import com.example.adminpage.moel.entity.Partner;
-import com.example.adminpage.moel.network.Header;
-import com.example.adminpage.moel.network.request.PartnerApiRequest;
-import com.example.adminpage.moel.network.response.PartnerApiResponse;
+import com.example.adminpage.model.entity.Partner;
+import com.example.adminpage.model.network.Header;
+import com.example.adminpage.model.network.request.PartnerApiRequest;
+import com.example.adminpage.model.network.response.PartnerApiResponse;
 import org.springframework.stereotype.Service;
 
 @Service

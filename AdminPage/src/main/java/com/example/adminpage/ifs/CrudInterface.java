@@ -1,6 +1,6 @@
 package com.example.adminpage.ifs;
 
-import com.example.adminpage.moel.network.Header;
+import com.example.adminpage.model.network.Header;
 
 public interface CrudInterface<Req,Res> {
 

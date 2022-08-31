@@ -1,7 +1,7 @@
 package com.example.adminpage.repository;
 
-import com.example.adminpage.moel.entity.Category;
-import com.example.adminpage.moel.entity.Partner;
+import com.example.adminpage.model.entity.Category;
+import com.example.adminpage.model.entity.Partner;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
